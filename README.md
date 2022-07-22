@@ -12,6 +12,7 @@ DEDSEC WIFI REVERSESHELL is a tool can create fake captive portal to deploy payl
 * Get current location, sim card details ,ip, mac address of the device
 
 ## Prerequisites
+* wifi adapter (support AP mode)
 * php
 * sudo - [ MUST ]
 
