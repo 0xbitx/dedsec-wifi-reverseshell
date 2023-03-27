@@ -1,4 +1,5 @@
-DEDSEC WIFI REVERSESHELL is a tool can create fake captive portal to deploy payload to control android phone remotely and retrieve informations from it. 
+<h1 align="center"> DEDSEC WIFI REVERSESHELL </h1> 
+Dedsec wifi revershell is a tool can create fake captive portal to deploy payload to control android phone remotely and retrieve informations from it. 
 
 ## payload Features
 * Full persistent backdoor
@@ -28,7 +29,7 @@ sudo bash dedsec-shell-wifi.sh
 * Ubuntu
 * Arch Linux
 
-### DISCLAIMER
-   TO BE USED FOR EDUCATIONAL PURPOSES ONLY
+<h1 align="center"> DISCLAIMER </h1>
 
-The use of the dedsec-tool is COMPLETE RESPONSIBILITY of the END-USER. Developers assume NO liability and are NOT responsible for any misuse or damage caused by this program. 
+<h4 align="center">I'm not responsible for anything you do with this program, so please only use it for good and educational purposes. </h4>
+
